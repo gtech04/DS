@@ -1,20 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct node {
     int key;
     struct node *left, *right;
 };
-
-// Corrected function to create a new node
 struct node *newNode(int item) {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     temp->key = item;
     temp->left = temp->right = NULL;
-    return temp;
-}
-
-// Function for in-order traversal
+    return temp;}
 void inorder(struct node *root) {
     if (root != NULL) {
         inorder(root->left);
@@ -22,8 +16,6 @@ void inorder(struct node *root) {
         inorder(root->right);
     }
 }
-
-// Function to insert a new node with a given key
 struct node *insert(struct node *node, int key) {
     if (node == NULL) {
         return newNode(key);
@@ -35,8 +27,6 @@ struct node *insert(struct node *node, int key) {
     }
     return node;
 }
-
-// Function to find the minimum value node
 struct node *minValueNode(struct node *node) {
     struct node *current = node;
     while (current && current->left != NULL) {
@@ -44,8 +34,6 @@ struct node *minValueNode(struct node *node) {
     }
     return current;
 }
-
-// Function to delete a node
 struct node *deleteNode(struct node *root, int key) {
     if (root == NULL) {
         return root;
@@ -71,8 +59,6 @@ struct node *deleteNode(struct node *root, int key) {
     }
     return root;
 }
-
-// Main function
 int main() {
     struct node *root = NULL;
     int item, choice, cont;
