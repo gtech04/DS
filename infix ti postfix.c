@@ -57,3 +57,9 @@ void main() {
         printf("%c", pop());
     }
 }
+
+
+//OUTPUT
+
+// Enter the infix expression: (A+B/C*(D+E)-F
+// ABC/DE+*+F-(
